@@ -32,13 +32,7 @@ Limbaje utilizate: Python pentru funcționalitate și HTML/CSS pentru interfaț�
 
 Exemple: Jocuri de tip "choose your own adventure" sau simulatoare RPG cu elemente de luptă și explorare.
 
-Resurse Utile
 
-Platformă: CS50x pe edX.
-
-Documentație: Materiale suplimentare pentru aprofundare.
-
-Forum: Comunitate activă pentru întrebări și discuții.
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
@@ -77,11 +71,6 @@ Librării folosite: Python cu ajutorul bibliotecilor precum NumPy și scikit-lea
 
 Exemple: Crearea unui joc RPG unde inamicii folosesc algoritmi de căutare pentru a urmări jucătorul sau NPC-urile pot negocia sau interacționa realist.
 
-Resurse Utile
 
-Platformă: CS50 AI pe edX.
 
-Biblioteci folosite: NumPy, pandas, TensorFlow, și scikit-learn.
-
-Forum: Întrebări și discuții legate de conceptele AI.
 
