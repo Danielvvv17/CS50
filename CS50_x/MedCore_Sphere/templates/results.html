@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezultate Căutare Medicament</title>
+    <style>
+        /* Stiluri generale */
+        body {
+            font-family: Arial, sans-serif;
+            background: url("/static/image.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: auto;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-box input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1.1em;
+            flex: 1;
+        }
+
+        .search-box button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background-color: #2980b9;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between; /* Elemente la capetele opuse */
+            align-items: center; /* Aliniere verticală */
+            margin: 20px 0; /* Spațiu între secțiuni */
+        }
+
+        .results-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        th {
+            top: 0;
+            z-index: 2;
+            position: sticky;
+            background-color: #1e6db1;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border: 3px solid black;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #333;
+            color: #333;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #dceeff;
+            cursor: default;
+        }
+
+        .message {
+            font-size: 1.2em;
+            color: #d9534f;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            background-color: #3498db;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-link a:hover {
+            background-color: #1e6db1;
+        }
+
+        table tbody tr td:nth-child(1) {
+            background-color: #dceeff;
+            color: #000;
+            font-weight: bold;
+        }
+
+        table tbody tr td {
+            background-color: white;
+            color: #333;
+            visibility: visible;
+            white-space: normal;
+            overflow: visible;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Date Farmaceutice</h1>
+        </div>
+
+        <!-- Rezultatele cu caseta de căutare -->
+        <div class="results-header">
+            <h2>Prezentarea detaliată a informațiilor despre  "{{ query }}"</h2>
+            <div class="search-box">
+                <form action="/search" method="POST">
+                    <input type="text" name="query" placeholder="Căutați un medicament sau o substanță..." required>
+                    <button type="submit">Caută</button>
+                </form>
+            </div>
+        </div>
+
+        {% if results %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Nume Medicament</th>
+                    <th>Substanță Activă</th>
+                    <th>Clasă Farmacologică</th>
+                    <th>Acțiune</th>
+                    <th>Doza Recomandată</th>
+                    <th> Administrare</th>
+                    <th>Efecte Adverse</th>
+                    <th>Indicații</th>
+                    <th>Contraindicații</th>
+                    <th>Alternative</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <td>{{ result['Nume Medicament'] }}</td>
+                    <td>{{ result['Substanță Activă'] }}</td>
+                    <td>{{ result['Clasă Farmacologică'] }}</td>
+                    <td>{{ result['Acțiune'] }}</td>
+                    <td>{{ result['Doza Recomandată'] }}</td>
+                    <td>{{ result[' Administrare'] }}</td>
+                    <td>{{ result['Efecte Adverse'] }}</td>
+                    <td>{{ result['Indicații'] }}</td>
+                    <td>{{ result['Contraindicații'] }}</td>
+                    <td>{{ result['Alternative'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="message">{{ message }}</p>
+        {% endif %}
+    </div>
+    <div class="back-link">
+        <a href="/">Înapoi la pagină</a>
+    </div>
+</body>
+</html>

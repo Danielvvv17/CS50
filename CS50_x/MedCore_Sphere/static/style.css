@@ -1,0 +1,170 @@
+
+
+/* --- Stiluri pentru Pagina 1 --- */
+body.pagina-1 {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Fundal gri deschis */
+    margin: 0;
+    padding: 0;
+}
+
+body.pagina-1 .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+body.pagina-1 .back-link a {
+    display: inline-block;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.pagina-1 .back-link a:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+body.pagina-1 .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+body.pagina-1 .search-container input[type="text"] {
+    padding: 10px;
+    font-size: 1.1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.pagina-1 .search-container button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+body.pagina-1 .search-container button:hover {
+    background-color: #2980b9;
+}
+
+
+
+
+
+
+/* --- Stiluri pentru Pagina 2 --- */
+body.pagina-a-doua {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Fundal alb */
+    margin: 0;
+    padding: 0;
+}
+
+body.pagina-a-doua .back-link {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+body.pagina-a-doua .back-link a {
+    display: inline-block;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.pagina-a-doua .back-link a:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+body.pagina-a-doua .container {
+    max-width: 1400px; /* Crește lățimea containerului */
+    margin: 20px auto; /* Centrare pe mijloc */
+    padding: 20px; /* Crește spațiul interior */
+    background-color: rgba(255, 255, 255, 0.95); /* Fundal alb semi-transparent, ușor mai opac */
+    border-radius: 10px; /* Colțuri rotunjite */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Umbră pentru contrast */
+    overflow-x: auto; /* Scroll orizontal dacă tabelul este prea lat */
+    overflow-y: hidden; /* Ascunde scroll-ul vertical inutil */
+    max-height: 90vh; /* Limitează înălțimea la 90% din viewport */
+}
+
+body.pagina-a-doua table {
+    width: 95%; /* Lățime completă a tabelului */
+    max-width: 100%; /* Nu depășește containerul */
+    border-collapse: collapse; /* Elimină spațiile dintre celule */
+    margin: 0 auto; /* Centrează tabelul */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Umbră discretă */
+    border: 1px solid #ddd; /* Bordură subțire */
+}
+
+body.pagina-a-doua th, body.pagina-a-doua td {
+    padding: 8px;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+body.pagina-a-doua th {
+    font-size: 1em;
+    background-color: #1e6db1;
+    color: white;
+}
+
+body.pagina-a-doua .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+body.pagina-a-doua .search-container input[type="text"] {
+    padding: 10px;
+    font-size: 1.1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.pagina-a-doua .search-container button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+body.pagina-a-doua .search-container button:hover {
+    background-color: #2980b9;
+}
+

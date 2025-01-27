@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Birthdays</title>
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Birthdays</h1>
+
+    <!-- Tabelul cu aniversările -->
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Birthday</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for birthday in birthdays %}
+                <tr>
+                    <td>{{ birthday.name }}</td>
+                    <td>{{ birthday.month }}/{{ birthday.day }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Formular pentru adăugarea unei noi aniversări -->
+    <form action="/" method="post">
+        <input name="name" type="text" placeholder="Name" required>
+        <input name="month" type="number" placeholder="Month" min="1" max="12" required>
+        <input name="day" type="number" placeholder="Day" min="1" max="31" required>
+        <input type="submit" value="Add Birthday">
+    </form>
+</body>
+</html>

@@ -1,0 +1,1448 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analize de  Laborator</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("{{ url_for('static', filename='blue.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Container pentru conținut */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9); /* Fundal alb ușor transparent */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a148c;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px; /* Crește distanța dintre h1 și următorul element */
+        }
+
+        h2 {
+            text-align: center;
+            color: #222;
+            margin-top: 30px; /* Crește distanța față de elementul de deasupra */
+        }
+
+        h3 {
+            text-align: center;
+            color: #222;
+            margin-top: 70px; /* Crește distanța față de elementul de deasupra */
+            margin-bottom : 15px;
+        }
+        h1, h2,h3 {
+            text-align: center;
+            color: #222; /* Gri închis */
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Stilizare tabel */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        /* Stilizare antet tabel */
+        th {
+            background-color: #467599;
+            color: white; /* Text alb */
+            padding: 12px;
+            text-align: center;
+            border: 2px  solid #333;
+        }
+
+        /* Stilizare celule tabel */
+        td {
+            padding: 12px;
+            border: 1px solid  #333;
+            text-align: center;
+        }
+
+        /* Culori personalizate pentru categorii */
+        td.normal {
+            background-color: white; /* Verde pastelat */
+        }
+
+        td.moderate {
+            background-color: white; /* Galben pastelat */
+        }
+
+        td:first-child {
+            text-align: left; /* Asigură alinierea la stânga */
+            padding-left: 35px; /* Elimină orice spațiu suplimentar pe stânga */
+            background-color: white;
+        }
+        td.high {
+            background-color: white;
+        }
+        .category {
+            font-weight: bold;
+            text-align: left;
+            background-color: #f9f9f9;
+        }
+            td:first-child {
+                font-weight: bold; /* Text îngroșat */
+        }
+        /* Fundal alb pentru toate celulele din a doua coloană */
+table tbody tr td:nth-child(3) {
+    background-color: white; /* Fundal alb */
+    color: #333; /* Text în culoare contrastantă */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1> Analize de Laborator</h1>
+
+        <!-- Analize fizico-chimice -->
+        <h3>Analize fizico-chimice (Sumar urină)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Analiză</th>
+                    <th> Normal</th>
+                    <th> Moderat</th>
+                    <th>Risc</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Culoare</td>
+                    <td class="normal">Galben pal</td>
+                    <td class="moderate">Galben intens</td>
+                    <td class="high">Roșu/Verde/Maro</td>
+                </tr>
+                <tr>
+                    <td>Aspect (claritate)</td>
+                    <td class="normal">Clara</td>
+                    <td class="moderate">Ușor tulbure</td>
+                    <td class="high">Tulbure</td>
+                </tr>
+                <tr>
+                    <td>Miros</td>
+                    <td class="normal">Inodor</td>
+                    <td class="moderate">Ammoniac</td>
+                    <td class="high">Pungent/Alterat</td>
+                </tr>
+                <tr>
+                    <td>pH</td>
+                    <td class="normal">5.5 - 7.5</td>
+                    <td class="moderate">7.6 - 8.0</td>
+                    <td class="high">&gt; 8.0</td>
+                </tr>
+                <tr>
+                    <td>Densitate</td>
+                    <td class="normal">1.005 - 1.030</td>
+                    <td class="moderate">1.031 - 1.040</td>
+                    <td class="high">&gt; 1.040</td>
+                </tr>
+                <tr>
+                    <td>Proteine</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Ușor Pozitiv</td>
+                    <td class="high">Pozitiv</td>
+                </tr>
+                <tr>
+                    <td>Glucoză</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Ușor Pozitiv</td>
+                    <td class="high">Pozitiv</td>
+                </tr>
+                <tr>
+                    <td>Corpi cetonici</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Ușor Pozitiv</td>
+                    <td class="high">Pozitiv</td>
+                </tr>
+                <tr>
+                    <td>Urobilinogen</td>
+                    <td class="normal">Normal</td>
+                    <td class="moderate">Crescut</td>
+                    <td class="high">Foarte crescut</td>
+                </tr>
+                <tr>
+                    <td>Bilirubină</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Prezent</td>
+                    <td class="high">Frecvent</td>
+                </tr>
+                <tr>
+                    <td>Hemoglobină</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Prezent</td>
+                    <td class="high">Frecvent</td>
+                </tr>
+                <tr>
+                    <td>Nitriți</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Prezent</td>
+                    <td class="high">Frecvent</td>
+                </tr>
+                <tr>
+                    <td>Leucocite</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Prezent</td>
+                    <td class="high">Frecvent</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Sediment urinar -->
+        <h3>Sediment urinar (Examinare microscopică)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Analiză</th>
+                    <th> Normal</th>
+                    <th> Moderat</th>
+                    <th>Risc </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Celule epiteliale</td>
+                    <td class="normal">&lt; 5 / câmp</td>
+                    <td class="moderate">5 - 15 / câmp</td>
+                    <td class="high">&gt; 15 / câmp</td>
+                </tr>
+                <tr>
+                    <td>Leucocite</td>
+                    <td class="normal">&lt; 10 / câmp</td>
+                    <td class="moderate">10 - 20 / câmp</td>
+                    <td class="high">&gt; 20 / câmp</td>
+                </tr>
+                <tr>
+                    <td>Eritrocite (hematii)</td>
+                    <td class="normal">&lt; 3 / câmp</td>
+                    <td class="moderate">3 - 10 / câmp</td>
+                    <td class="high">&gt; 10 / câmp</td>
+                </tr>
+                <tr>
+                    <td>Cilindri urinari</td>
+                    <td class="normal">Absenti</td>
+                    <td class="moderate">Rari</td>
+                    <td class="high">Frecvent</td>
+                </tr>
+                <tr>
+                    <td>Cristale</td>
+                    <td class="normal">Absenti</td>
+                    <td class="moderate">Prezent</td>
+                    <td class="high">Frecvent</td>
+                </tr>
+                <tr>
+                    <td>Bacterii</td>
+                    <td class="normal">Absenti</td>
+                    <td class="moderate">Prezent</td>
+                    <td class="high">Frecvent</td>
+                </tr>
+                <tr>
+                    <td>Fungi</td>
+                    <td class="normal">Absenti</td>
+                    <td class="moderate">Prezent</td>
+                    <td class="high">Frecvent</td>
+                </tr>
+                <tr>
+                    <td>Spermatozoizi</td>
+                    <td class="normal">Absenti</td>
+                    <td class="moderate">Detectați accidental</td>
+                    <td class="high">Prezenți frecvent</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Teste biochimice suplimentare -->
+        <h3>Teste biochimice suplimentare</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Analiză</th>
+                    <th> Normal</th>
+                    <th> Moderat</th>
+                    <th>Risc </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Creatinină urinară</td>
+                    <td class="normal">0.8 - 2.0 g/24h</td>
+                    <td class="moderate">2.1 - 3.0 g/24h</td>
+                    <td class="high">&gt; 3.0 g/24h</td>
+                </tr>
+                <tr>
+                    <td>Acid uric urinar</td>
+                    <td class="normal">250 - 750 mg/24h</td>
+                    <td class="moderate">751 - 900 mg/24h</td>
+                    <td class="high">&gt; 900 mg/24h</td>
+                </tr>
+                <tr>
+                    <td>Calciu urinar</td>
+                    <td class="normal">100 - 300 mg/24h</td>
+                    <td class="moderate">301 - 400 mg/24h</td>
+                    <td class="high">&gt; 400 mg/24h</td>
+                </tr>
+                <tr>
+                    <td>Sodiu (Na+) urinar</td>
+                    <td class="normal">40 - 220 mEq/24h</td>
+                    <td class="moderate">221 - 300 mEq/24h</td>
+                    <td class="high">&gt; 300 mEq/24h</td>
+                </tr>
+                <tr>
+                    <td>Potasiu (K+) urinar</td>
+                    <td class="normal">25 - 125 mEq/24h</td>
+                    <td class="moderate">126 - 150 mEq/24h</td>
+                    <td class="high">&gt; 150 mEq/24h</td>
+                </tr>
+                <tr>
+                    <td>Fosfați urinari</td>
+                    <td class="normal">0.4 - 1.3 g/24h</td>
+                    <td class="moderate">1.4 - 1.8 g/24h</td>
+                    <td class="high">&gt; 1.8 g/24h</td>
+                </tr>
+                <tr>
+                    <td>Clor (Cl-) urinar</td>
+                    <td class="normal">110 - 250 mEq/24h</td>
+                    <td class="moderate">251 - 300 mEq/24h</td>
+                    <td class="high">&gt; 300 mEq/24h</td>
+                </tr>
+                <tr>
+                    <td>Albumină urinară (microalbuminurie)</td>
+                    <td class="normal">&lt; 30 mg/24h</td>
+                    <td class="moderate">30 - 300 mg/24h</td>
+                    <td class="high">&gt; 300 mg/24h</td>
+                </tr>
+                <tr>
+                    <td>Proteine totale în urină</td>
+                    <td class="normal">&lt; 150 mg/24h</td>
+                    <td class="moderate">150 - 500 mg/24h</td>
+                    <td class="high">&gt; 500 mg/24h</td>
+                </tr>
+                <tr>
+                    <td>Glicozurie</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Ușor Pozitiv</td>
+                    <td class="high">Pozitiv</td>
+                </tr>
+                <tr>
+                    <td>Amilază urinară</td>
+                    <td class="normal">0 - 500 U/24h</td>
+                    <td class="moderate">501 - 700 U/24h</td>
+                    <td class="high">&gt; 700 U/24h</td>
+                </tr>
+                <tr>
+                    <td>Excreția de oxalați</td>
+                    <td class="normal">0.08 - 0.5 mmol/24h</td>
+                    <td class="moderate">0.51 - 0.7 mmol/24h</td>
+                    <td class="high">&gt; 0.7 mmol/24h</td>
+                </tr>
+                <tr>
+                    <td>Excreția de cistină</td>
+                    <td class="normal">&lt; 10 mg/24h</td>
+                    <td class="moderate">10 - 30 mg/24h</td>
+                    <td class="high">&gt; 30 mg/24h</td>
+                </tr>
+
+                <!-- Teste pentru Infecții -->
+                <tr>
+                    <td>Urocultură</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Prezent &lt; 10⁵ UFC/mL</td>
+                    <td class="high">Prezent &gt; 10⁵ UFC/mL</td>
+                </tr>
+                <tr>
+                    <td>Test pentru Mycobacterium tuberculosis</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Suspiciune</td>
+                    <td class="high">Pozitiv</td>
+                </tr>
+                <tr>
+                    <td>Examen pentru fungii urinari</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Suspiciune</td>
+                    <td class="high">Pozitiv</td>
+                </tr>
+                <tr>
+                    <td>Test pentru virusuri în urină</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Suspiciune</td>
+                    <td class="high">Pozitiv</td>
+                </tr>
+
+                <!-- Teste Speciale -->
+                <tr>
+                    <td>Electroforeza proteinelor urinare</td>
+                    <td class="normal">Tip normal</td>
+                    <td class="moderate">Modificare ușoară</td>
+                    <td class="high">Modificare severă</td>
+                </tr>
+                <tr>
+                    <td>Raport proteine/creatinină</td>
+                    <td class="normal">&lt; 0.2</td>
+                    <td class="moderate">0.2 - 0.5</td>
+                    <td class="high">&gt; 0.5</td>
+                </tr>
+                <tr>
+                    <td>Raport albumină/creatinină</td>
+                    <td class="normal">&lt; 30 mg/g</td>
+                    <td class="moderate">30 - 300 mg/g</td>
+                    <td class="high">&gt; 300 mg/g</td>
+                </tr>
+                <tr>
+                    <td>Beta-2 microglobulina</td>
+                    <td class="normal">0.2 - 2.5 mg/L</td>
+                    <td class="moderate">2.6 - 5 mg/L</td>
+                    <td class="high">&gt; 5 mg/L</td>
+                </tr>
+                <tr>
+                    <td>Cistatina C</td>
+                    <td class="normal">0.6 - 1.2 mg/L</td>
+                    <td class="moderate">1.3 - 1.8 mg/L</td>
+                    <td class="high">&gt; 1.8 mg/L</td>
+                </tr>
+                <tr>
+                    <td>Markerii inflamatori</td>
+                    <td class="normal">Negativ</td>
+                    <td class="moderate">Suspiciune</td>
+                    <td class="high">Pozitiv</td>
+                </tr>
+
+                <!-- Teste Hormonale -->
+                <tr>
+                    <td>Cortizol urinar</td>
+                    <td class="normal">10 - 100 µg/24h</td>
+                    <td class="moderate">101 - 150 µg/24h</td>
+                    <td class="high">&gt; 150 µg/24h</td>
+                </tr>
+                <tr>
+                    <td>Catecolamine urinare</td>
+                    <td class="normal">30 - 300 µg/24h</td>
+                    <td class="moderate">301 - 500 µg/24h</td>
+                    <td class="high">&gt; 500 µg/24h</td>
+                </tr>
+                <tr>
+                    <td>Acid vanilmandelic (VMA)</td>
+                    <td class="normal">&lt; 10 mg/24h</td>
+                    <td class="moderate">10 - 15 mg/24h</td>
+                    <td class="high">&gt; 15 mg/24h</td>
+                </tr>
+                <tr>
+                    <td>Acid homovanilic (HVA)</td>
+                    <td class="normal">&lt; 15 mg/24h</td>
+                    <td class="moderate">15 - 25 mg/24h</td>
+                    <td class="high">&gt; 25 mg/24h</td>
+                </tr>
+                <tr>
+                    <td>Metanefrine urinare</td>
+                    <td class="normal">&lt; 1.3 mg/24h</td>
+                    <td class="moderate">1.3 - 2.0 mg/24h</td>
+                    <td class="high">&gt; 2.0 mg/24h</td>
+                </tr>
+                <!-- Continuăm cu alte analize -->
+            </tbody>
+        </table>
+
+        <h3> Hemoleucograma completă (CBC)</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th>Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Hemoglobina (HGB)</td>
+            <td class="normal">12 - 16 g/dL</td>
+            <td class="moderate">10 - 11.9 g/dL</td>
+            <td class="high">&lt; 10 g/dL sau &gt; 16 g/dL</td>
+        </tr>
+        <tr>
+            <td>Hematocrit (HCT)</td>
+            <td class="normal">36 - 50%</td>
+            <td class="moderate">30 - 35.9%</td>
+            <td class="high">&lt; 30% sau &gt; 50%</td>
+        </tr>
+        <tr>
+            <td>Eritrocite (RBC)</td>
+            <td class="normal">4.2 - 5.9 mil/μL</td>
+            <td class="moderate">3.5 - 4.1 mil/μL</td>
+            <td class="high">&lt; 3.5 mil/μL sau &gt; 5.9 mil/μL</td>
+        </tr>
+        <tr>
+            <td>Leucocite (WBC)</td>
+            <td class="normal">4.0 - 10.0 x10⁹/L</td>
+            <td class="moderate">3.0 - 3.9 x10⁹/L</td>
+            <td class="high">&lt; 3.0 x10⁹/L sau &gt; 10.0 x10⁹/L</td>
+        </tr>
+        <tr>
+            <td>Neutrofile (NE%)</td>
+            <td class="normal">40 - 75%</td>
+            <td class="moderate">30 - 39%</td>
+            <td class="high">&lt; 30% sau &gt; 75%</td>
+        </tr>
+        <tr>
+            <td>Neutrofile (NE#)</td>
+            <td class="normal">1.5 - 7.5 x10⁹/L</td>
+            <td class="moderate">1.0 - 1.4 x10⁹/L</td>
+            <td class="high">&lt; 1.0 x10⁹/L sau &gt; 7.5 x10⁹/L</td>
+        </tr>
+        <tr>
+            <td>Limfocite (LY%)</td>
+            <td class="normal">20 - 40%</td>
+            <td class="moderate">15 - 19%</td>
+            <td class="high">&lt; 15% sau &gt; 40%</td>
+        </tr>
+        <tr>
+            <td>Limfocite (LY#)</td>
+            <td class="normal">1.0 - 3.5 x10⁹/L</td>
+            <td class="moderate">0.8 - 0.9 x10⁹/L</td>
+            <td class="high">&lt; 0.8 x10⁹/L sau &gt; 3.5 x10⁹/L</td>
+        </tr>
+        <tr>
+            <td>Monocite (MO%)</td>
+            <td class="normal">2 - 10%</td>
+            <td class="moderate">1 - 1.9%</td>
+            <td class="high">&lt; 1% sau &gt; 10%</td>
+        </tr>
+        <tr>
+            <td>Monocite (MO#)</td>
+            <td class="normal">0.2 - 0.8 x10⁹/L</td>
+            <td class="moderate">0.1 - 0.19 x10⁹/L</td>
+            <td class="high">&lt; 0.1 x10⁹/L sau &gt; 0.8 x10⁹/L</td>
+        </tr>
+        <tr>
+            <td>Eozinofile (EO%)</td>
+            <td class="normal">0 - 6%</td>
+            <td class="moderate">7 - 10%</td>
+            <td class="high">&gt; 10%</td>
+        </tr>
+        <tr>
+            <td>Eozinofile (EO#)</td>
+            <td class="normal">0.0 - 0.4 x10⁹/L</td>
+            <td class="moderate">0.41 - 0.5 x10⁹/L</td>
+            <td class="high">&gt; 0.5 x10⁹/L</td>
+        </tr>
+        <tr>
+            <td>Bazofile (BA%)</td>
+            <td class="normal">0 - 2%</td>
+            <td class="moderate">2.1 - 3%</td>
+            <td class="high">&gt; 3%</td>
+        </tr>
+        <tr>
+            <td>Bazofile (BA#)</td>
+            <td class="normal">0.0 - 0.2 x10⁹/L</td>
+            <td class="moderate">0.21 - 0.3 x10⁹/L</td>
+            <td class="high">&gt; 0.3 x10⁹/L</td>
+        </tr>
+        <tr>
+            <td>Trombocite (PLT)</td>
+            <td class="normal">150 - 450 x10³/μL</td>
+            <td class="moderate">100 - 149 x10³/μL</td>
+            <td class="high">&lt; 100 x10³/μL sau &gt; 450 x10³/μL</td>
+        </tr>
+        <tr>
+            <td>Volum eritrocitar mediu (MCV)</td>
+            <td class="normal">80 - 100 fL</td>
+            <td class="moderate">70 - 79 fL</td>
+            <td class="high">&lt; 70 fL sau &gt; 100 fL</td>
+        </tr>
+        <tr>
+            <td>Hemoglobina eritrocitară medie (MCH)</td>
+            <td class="normal">27 - 31 pg</td>
+            <td class="moderate">25 - 26 pg</td>
+            <td class="high">&lt; 25 pg sau &gt; 31 pg</td>
+        </tr>
+        <tr>
+            <td>Concentrația medie a hemoglobinei eritrocitare (MCHC)</td>
+            <td class="normal">32 - 36 g/dL</td>
+            <td class="moderate">30 - 31 g/dL</td>
+            <td class="high">&lt; 30 g/dL sau &gt; 36 g/dL</td>
+        </tr>
+        <tr>
+            <td>RDW-SD</td>
+            <td class="normal">35 - 46 fL</td>
+            <td class="moderate">47 - 50 fL</td>
+            <td class="high">&gt; 50 fL</td>
+        </tr>
+        <tr>
+            <td>RDW-CV</td>
+            <td class="normal">11 - 15%</td>
+            <td class="moderate">15.1 - 17%</td>
+            <td class="high">&gt; 17%</td>
+        </tr>
+    </tbody>
+</table>
+<h3>Parametri Biochimici</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Glucoza serică</td>
+            <td class="normal">70 - 100 mg/dL</td>
+            <td class="moderate">101 - 125 mg/dL</td>
+            <td class="high">&gt; 125 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Uree</td>
+            <td class="normal">15 - 40 mg/dL</td>
+            <td class="moderate">41 - 60 mg/dL</td>
+            <td class="high">&gt; 60 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Creatinină</td>
+            <td class="normal">0.6 - 1.2 mg/dL</td>
+            <td class="moderate">1.3 - 1.8 mg/dL</td>
+            <td class="high">&gt; 1.8 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Acid uric</td>
+            <td class="normal">2.4 - 6.0 mg/dL (femei) | 3.4 - 7.0 mg/dL (bărbați)</td>
+            <td class="moderate">6.1 - 7.0 mg/dL (femei) | 7.1 - 8.0 mg/dL (bărbați)</td>
+            <td class="high">&gt; 7.0 mg/dL (femei) | &gt; 8.0 mg/dL (bărbați)</td>
+        </tr>
+        <tr>
+            <td>Bilirubină totală</td>
+            <td class="normal">0.1 - 1.2 mg/dL</td>
+            <td class="moderate">1.3 - 2.0 mg/dL</td>
+            <td class="high">&gt; 2.0 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Bilirubină directă</td>
+            <td class="normal">0 - 0.3 mg/dL</td>
+            <td class="moderate">0.4 - 0.6 mg/dL</td>
+            <td class="high">&gt; 0.6 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Proteine totale</td>
+            <td class="normal">6.0 - 8.0 g/dL</td>
+            <td class="moderate">8.1 - 9.0 g/dL</td>
+            <td class="high">&gt; 9.0 g/dL</td>
+        </tr>
+        <tr>
+            <td>Albumină</td>
+            <td class="normal">3.5 - 5.0 g/dL</td>
+            <td class="moderate">3.0 - 3.4 g/dL</td>
+            <td class="high">&lt; 3.0 g/dL sau &gt; 5.0 g/dL</td>
+        </tr>
+        <tr>
+            <td>Globuline</td>
+            <td class="normal">2.0 - 3.5 g/dL</td>
+            <td class="moderate">1.5 - 1.9 g/dL</td>
+            <td class="high">&lt; 1.5 g/dL sau &gt; 3.5 g/dL</td>
+        </tr>
+        <tr>
+            <td>Raport albumină/globuline</td>
+            <td class="normal">1.0 - 2.5</td>
+            <td class="moderate">0.8 - 0.9</td>
+            <td class="high">&lt; 0.8 sau &gt; 2.5</td>
+        </tr>
+    </tbody>
+</table>
+<h3>Electroliți</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Sodiu (Na+)</td>
+            <td class="normal">135 - 145 mmol/L</td>
+            <td class="moderate">130 - 134 mmol/L</td>
+            <td class="high">&lt; 130 mmol/L sau &gt; 145 mmol/L</td>
+        </tr>
+        <tr>
+            <td>Potasiu (K+)</td>
+            <td class="normal">3.5 - 5.0 mmol/L</td>
+            <td class="moderate">3.0 - 3.4 mmol/L</td>
+            <td class="high">&lt; 3.0 mmol/L sau &gt; 5.0 mmol/L</td>
+        </tr>
+        <tr>
+            <td>Clor (Cl-)</td>
+            <td class="normal">98 - 106 mmol/L</td>
+            <td class="moderate">90 - 97 mmol/L</td>
+            <td class="high">&lt; 90 mmol/L sau &gt; 106 mmol/L</td>
+        </tr>
+        <tr>
+            <td>Calciu total</td>
+            <td class="normal">8.5 - 10.2 mg/dL</td>
+            <td class="moderate">8.0 - 8.4 mg/dL</td>
+            <td class="high">&lt; 8.0 mg/dL sau &gt; 10.2 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Calciu ionic</td>
+            <td class="normal">1.15 - 1.35 mmol/L</td>
+            <td class="moderate">1.0 - 1.14 mmol/L</td>
+            <td class="high">&lt; 1.0 mmol/L sau &gt; 1.35 mmol/L</td>
+        </tr>
+        <tr>
+            <td>Magneziu (Mg)</td>
+            <td class="normal">1.7 - 2.2 mg/dL</td>
+            <td class="moderate">1.5 - 1.6 mg/dL</td>
+            <td class="high">&lt; 1.5 mg/dL sau &gt; 2.2 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Fosfor (P)</td>
+            <td class="normal">2.5 - 4.5 mg/dL</td>
+            <td class="moderate">2.0 - 2.4 mg/dL</td>
+            <td class="high">&lt; 2.0 mg/dL sau &gt; 4.5 mg/dL</td>
+        </tr>
+    </tbody>
+</table>
+<h3>Enzime Hepatice</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ALT (TGP) - Alanin aminotransferază</td>
+            <td class="normal">0 - 40 U/L</td>
+            <td class="moderate">41 - 70 U/L</td>
+            <td class="high">&gt; 70 U/L</td>
+        </tr>
+        <tr>
+            <td>AST (TGO) - Aspartat aminotransferază</td>
+            <td class="normal">0 - 40 U/L</td>
+            <td class="moderate">41 - 70 U/L</td>
+            <td class="high">&gt; 70 U/L</td>
+        </tr>
+        <tr>
+            <td>GGT - Gamma-glutamiltransferază</td>
+            <td class="normal">9 - 48 U/L</td>
+            <td class="moderate">49 - 80 U/L</td>
+            <td class="high">&gt; 80 U/L</td>
+        </tr>
+        <tr>
+            <td>Fosfatază alcalină (ALP)</td>
+            <td class="normal">40 - 130 U/L</td>
+            <td class="moderate">131 - 200 U/L</td>
+            <td class="high">&gt; 200 U/L</td>
+        </tr>
+        <tr>
+            <td>LDH - Lactat dehidrogenază</td>
+            <td class="normal">140 - 280 U/L</td>
+            <td class="moderate">281 - 400 U/L</td>
+            <td class="high">&gt; 400 U/L</td>
+        </tr>
+    </tbody>
+</table>
+<h3> Enzime Pancreatice și Markeri Asociați</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Amilaza</td>
+            <td class="normal">30 - 110 U/L</td>
+            <td class="moderate">111 - 150 U/L</td>
+            <td class="high">&gt; 150 U/L</td>
+        </tr>
+        <tr>
+            <td>Lipaza</td>
+            <td class="normal">0 - 60 U/L</td>
+            <td class="moderate">61 - 100 U/L</td>
+            <td class="high">&gt; 100 U/L</td>
+        </tr>
+        <tr>
+            <td>Tripsina</td>
+            <td class="normal">20 - 70 ng/mL</td>
+            <td class="moderate">71 - 100 ng/mL</td>
+            <td class="high">&gt; 100 ng/mL</td>
+        </tr>
+        <tr>
+            <td>Tripsinogen</td>
+            <td class="normal">10 - 57 ng/mL</td>
+            <td class="moderate">58 - 70 ng/mL</td>
+            <td class="high">&gt; 70 ng/mL</td>
+        </tr>
+        <tr>
+            <td>Elastaza (fecală)</td>
+            <td class="normal">&gt; 200 µg/g</td>
+            <td class="moderate">100 - 200 µg/g</td>
+            <td class="high">&lt; 100 µg/g</td>
+        </tr>
+        <tr>
+            <td>Colesterol esterază</td>
+            <td class="normal">Normal detectabil</td>
+            <td class="moderate">Scăzut</td>
+            <td class="high">Foarte scăzut</td>
+        </tr>
+        <tr>
+            <td>Fosfolipaza A2</td>
+            <td class="normal">0.5 - 2.0 ng/mL</td>
+            <td class="moderate">2.1 - 3.5 ng/mL</td>
+            <td class="high">&gt; 3.5 ng/mL</td>
+        </tr>
+        <tr>
+            <td>Insulina (peptid C)</td>
+            <td class="normal">0.9 - 7.1 ng/mL</td>
+            <td class="moderate">7.2 - 10.0 ng/mL</td>
+            <td class="high">&gt; 10.0 ng/mL</td>
+        </tr>
+        <tr>
+            <td>Glucagon</td>
+            <td class="normal">50 - 100 pg/mL</td>
+            <td class="moderate">101 - 200 pg/mL</td>
+            <td class="high">&gt; 200 pg/mL</td>
+        </tr>
+        <tr>
+            <td>Somatostatină</td>
+            <td class="normal">0 - 30 pg/mL</td>
+            <td class="moderate">31 - 50 pg/mL</td>
+            <td class="high">&gt; 50 pg/mL</td>
+        </tr>
+    </tbody>
+</table>
+<h3>Profil Lipidic (Colesterol)</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Colesterol total</td>
+            <td class="normal">&lt; 200 mg/dL</td>
+            <td class="moderate">200 - 239 mg/dL</td>
+            <td class="high">&gt; 240 mg/dL</td>
+        </tr>
+        <tr>
+            <td>HDL colesterol (colesterol bun)</td>
+            <td class="normal">&gt; 40 mg/dL</td>
+            <td class="moderate">35 - 40 mg/dL</td>
+            <td class="high">&lt; 35 mg/dL</td>
+        </tr>
+        <tr>
+            <td>LDL colesterol (colesterol rău)</td>
+            <td class="normal">&lt; 100 mg/dL</td>
+            <td class="moderate">100 - 159 mg/dL</td>
+            <td class="high">&gt; 160 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Trigliceride</td>
+            <td class="normal">&lt; 150 mg/dL</td>
+            <td class="moderate">150 - 199 mg/dL</td>
+            <td class="high">&gt; 200 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Raport colesterol total/HDL</td>
+            <td class="normal">&lt; 5</td>
+            <td class="moderate">5 - 6</td>
+            <td class="high">&gt; 6</td>
+        </tr>
+    </tbody>
+</table>
+<h3>Markeri Inflamatori</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Proteina C reactivă (CRP)</td>
+            <td class="normal">&lt; 0.5 mg/dL</td>
+            <td class="moderate">0.5 - 1.0 mg/dL</td>
+            <td class="high">&gt; 1.0 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Fibrinogen</td>
+            <td class="normal">200 - 400 mg/dL</td>
+            <td class="moderate">401 - 600 mg/dL</td>
+            <td class="high">&gt; 600 mg/dL</td>
+        </tr>
+        <tr>
+            <td>VSH (viteza de sedimentare a hematiilor)</td>
+            <td class="normal">0 - 20 mm/h</td>
+            <td class="moderate">21 - 40 mm/h</td>
+            <td class="high">&gt; 40 mm/h</td>
+        </tr>
+        <tr>
+            <td>Interleukine (IL-6)</td>
+            <td class="normal">&lt; 7 pg/mL</td>
+            <td class="moderate">7 - 20 pg/mL</td>
+            <td class="high">&gt; 20 pg/mL</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Markeri Imunologici</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ASLO (anticorpi antistreptolizină O)</td>
+            <td class="normal">&lt; 200 UI/mL</td>
+            <td class="moderate">200 - 400 UI/mL</td>
+            <td class="high">&gt; 400 UI/mL</td>
+        </tr>
+        <tr>
+            <td>Factor reumatoid (RF)</td>
+            <td class="normal">&lt; 14 IU/mL</td>
+            <td class="moderate">14 - 50 IU/mL</td>
+            <td class="high">&gt; 50 IU/mL</td>
+        </tr>
+        <tr>
+            <td>ANA (anticorpi antinucleari)</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Titrul 1:80 - 1:160</td>
+            <td class="high">Titrul &gt; 1:160</td>
+        </tr>
+        <tr>
+            <td>Anticorpi anti-ADN dublu catenar</td>
+            <td class="normal">&lt; 30 IU/mL</td>
+            <td class="moderate">30 - 75 IU/mL</td>
+            <td class="high">&gt; 75 IU/mL</td>
+        </tr>
+        <tr>
+            <td>Complement seric (C3)</td>
+            <td class="normal">90 - 180 mg/dL</td>
+            <td class="moderate">60 - 89 mg/dL</td>
+            <td class="high">&lt; 60 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Complement seric (C4)</td>
+            <td class="normal">10 - 40 mg/dL</td>
+            <td class="moderate">5 - 9 mg/dL</td>
+            <td class="high">&lt; 5 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Anticorpi specifici (ex. anti-citoplasma neutrofilelor - ANCA)</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Prezent (titru scăzut)</td>
+            <td class="high">Prezent (titru ridicat)</td>
+        </tr>
+    </tbody>
+</table>
+<h3>Hormoni</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Hormoni Tiroidieni -->
+        <tr>
+            <td>TSH</td>
+            <td class="normal">0.4 - 4.0 µIU/mL</td>
+            <td class="moderate">4.1 - 10.0 µIU/mL</td>
+            <td class="high">&gt; 10.0 µIU/mL</td>
+        </tr>
+        <tr>
+            <td>FT3 (triiodotironină liberă)</td>
+            <td class="normal">2.3 - 4.2 pg/mL</td>
+            <td class="moderate">1.5 - 2.2 pg/mL</td>
+            <td class="high">&lt; 1.5 pg/mL</td>
+        </tr>
+        <tr>
+            <td>FT4 (tiroxină liberă)</td>
+            <td class="normal">0.8 - 1.8 ng/dL</td>
+            <td class="moderate">0.5 - 0.79 ng/dL</td>
+            <td class="high">&lt; 0.5 ng/dL</td>
+        </tr>
+        <tr>
+            <td>ATPO (anticorpi anti-peroxidază tiroidiană)</td>
+            <td class="normal">&lt; 35 IU/mL</td>
+            <td class="moderate">35 - 100 IU/mL</td>
+            <td class="high">&gt; 100 IU/mL</td>
+        </tr>
+        <tr>
+            <td>Tiroglobulină</td>
+            <td class="normal">3 - 40 ng/mL</td>
+            <td class="moderate">40 - 70 ng/mL</td>
+            <td class="high">&gt; 70 ng/mL</td>
+        </tr>
+        <tr>
+            <td>Anticorpi anti-tiroglobulină</td>
+            <td class="normal">&lt; 115 IU/mL</td>
+            <td class="moderate">115 - 200 IU/mL</td>
+            <td class="high">&gt; 200 IU/mL</td>
+        </tr>
+        <!-- Hormoni Sexuali -->
+        <tr>
+            <td>Estradiol</td>
+            <td class="normal">12 - 60 pg/mL (bărbați) | 30 - 400 pg/mL (femei)</td>
+            <td class="moderate">Scăzut</td>
+            <td class="high">Ridicat</td>
+        </tr>
+        <tr>
+            <td>Progesteron</td>
+            <td class="normal">0.2 - 1.4 ng/mL (faza foliculară)</td>
+            <td class="moderate">1.5 - 2.5 ng/mL</td>
+            <td class="high">&gt; 2.5 ng/mL</td>
+        </tr>
+        <tr>
+            <td>Testosteron</td>
+            <td class="normal">280 - 1100 ng/dL (bărbați) | 15 - 70 ng/dL (femei)</td>
+            <td class="moderate">Scăzut</td>
+            <td class="high">Ridicat</td>
+        </tr>
+        <tr>
+            <td>LH (hormon luteinizant)</td>
+            <td class="normal">1.0 - 8.4 IU/L</td>
+            <td class="moderate">8.5 - 15 IU/L</td>
+            <td class="high">&gt; 15 IU/L</td>
+        </tr>
+        <tr>
+            <td>FSH (hormon de stimulare foliculară)</td>
+            <td class="normal">1.0 - 10 IU/L</td>
+            <td class="moderate">10 - 15 IU/L</td>
+            <td class="high">&gt; 15 IU/L</td>
+        </tr>
+        <tr>
+            <td>Prolactină</td>
+            <td class="normal">4 - 23 ng/mL</td>
+            <td class="moderate">24 - 50 ng/mL</td>
+            <td class="high">&gt; 50 ng/mL</td>
+        </tr>
+        <tr>
+            <td>Hormon de creștere (GH)</td>
+            <td class="normal">&lt; 3 ng/mL (bazal)</td>
+            <td class="moderate">3 - 10 ng/mL</td>
+            <td class="high">&gt; 10 ng/mL</td>
+        </tr>
+        <tr>
+            <td>IGF-1</td>
+            <td class="normal">116 - 358 ng/mL (adulți)</td>
+            <td class="moderate">Scăzut</td>
+            <td class="high">Ridicat</td>
+        </tr>
+        <!-- Alți Hormoni -->
+        <tr>
+            <td>Cortizol</td>
+            <td class="normal">5 - 25 µg/dL (dimineața)</td>
+            <td class="moderate">26 - 50 µg/dL</td>
+            <td class="high">&gt; 50 µg/dL</td>
+        </tr>
+        <tr>
+            <td>ACTH (adrenocorticotropină)</td>
+            <td class="normal">10 - 60 pg/mL</td>
+            <td class="moderate">61 - 100 pg/mL</td>
+            <td class="high">&gt; 100 pg/mL</td>
+        </tr>
+        <tr>
+            <td>Insulină</td>
+            <td class="normal">2 - 20 µIU/mL</td>
+            <td class="moderate">21 - 50 µIU/mL</td>
+            <td class="high">&gt; 50 µIU/mL</td>
+        </tr>
+        <tr>
+            <td>Hormon paratiroidian (PTH)</td>
+            <td class="normal">10 - 65 pg/mL</td>
+            <td class="moderate">66 - 100 pg/mL</td>
+            <td class="high">&gt; 100 pg/mL</td>
+        </tr>
+        <tr>
+            <td>Aldosteron</td>
+            <td class="normal">4 - 30 ng/dL</td>
+            <td class="moderate">31 - 50 ng/dL</td>
+            <td class="high">&gt; 50 ng/dL</td>
+        </tr>
+    </tbody>
+</table>
+<h3> Analize pentru Boli Infecțioase</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Serologie pentru Hepatita B -->
+        <tr>
+            <td>AgHBs (Antigen de suprafață Hepatita B)</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Suspiciune (titru scăzut)</td>
+            <td class="high">Pozitiv</td>
+        </tr>
+        <tr>
+            <td>Anti-HBc (anticorpi anti-core Hepatita B)</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Suspiciune (titru scăzut)</td>
+            <td class="high">Pozitiv</td>
+        </tr>
+        <tr>
+            <td>Anti-HBs (anticorpi protectivi Hepatita B)</td>
+            <td class="normal">&gt; 10 UI/L</td>
+            <td class="moderate">5 - 10 UI/L</td>
+            <td class="high">&lt; 5 UI/L</td>
+        </tr>
+        <!-- Serologie pentru Hepatita C -->
+        <tr>
+            <td>Anti-HCV (anticorpi Hepatita C)</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Suspiciune (titru scăzut)</td>
+            <td class="high">Pozitiv</td>
+        </tr>
+        <!-- Teste pentru HIV -->
+        <tr>
+            <td>HIV 1/2 (anticorpi și antigen p24)</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Suspiciune</td>
+            <td class="high">Pozitiv</td>
+        </tr>
+        <!-- Teste pentru Sifilis -->
+        <tr>
+            <td>VDRL</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Suspiciune</td>
+            <td class="high">Pozitiv</td>
+        </tr>
+        <tr>
+            <td>TPHA</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Suspiciune</td>
+            <td class="high">Pozitiv</td>
+        </tr>
+        <!-- Teste pentru Infecții Virale -->
+        <tr>
+            <td>CMV (Cytomegalovirus, IgG și IgM)</td>
+            <td class="normal">IgG Negativ, IgM Negativ</td>
+            <td class="moderate">IgG Pozitiv, IgM Negativ</td>
+            <td class="high">IgM Pozitiv</td>
+        </tr>
+        <tr>
+            <td>EBV (Epstein-Barr Virus, IgG și IgM)</td>
+            <td class="normal">IgG Negativ, IgM Negativ</td>
+            <td class="moderate">IgG Pozitiv, IgM Negativ</td>
+            <td class="high">IgM Pozitiv</td>
+        </tr>
+        <tr>
+            <td>Rubella</td>
+            <td class="normal">IgG Pozitiv, IgM Negativ</td>
+            <td class="moderate">IgG Negativ, IgM Negativ</td>
+            <td class="high">IgM Pozitiv</td>
+        </tr>
+        <tr>
+            <td>Toxoplasma</td>
+            <td class="normal">IgG Pozitiv, IgM Negativ</td>
+            <td class="moderate">IgG Negativ, IgM Negativ</td>
+            <td class="high">IgM Pozitiv</td>
+        </tr>
+        <!-- Hemocultură -->
+        <tr>
+            <td>Hemocultură pentru bacterii</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Suspiciune</td>
+            <td class="high">Pozitiv</td>
+        </tr>
+    </tbody>
+</table>
+<h3>Analize Imunologice</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th>Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Markeri inflamatori -->
+        <tr>
+            <td>CRP (proteină C reactivă)</td>
+            <td class="normal">&lt; 0.5 mg/dL</td>
+            <td class="moderate">0.5 - 1.0 mg/dL</td>
+            <td class="high">&gt; 1.0 mg/dL</td>
+        </tr>
+        <!-- Markeri imunologici -->
+        <tr>
+            <td>ANA (anticorpi antinucleari)</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Titrul 1:80 - 1:160</td>
+            <td class="high">Titrul &gt; 1:160</td>
+        </tr>
+        <tr>
+            <td>RF (factor reumatoid)</td>
+            <td class="normal">&lt; 14 IU/mL</td>
+            <td class="moderate">14 - 50 IU/mL</td>
+            <td class="high">&gt; 50 IU/mL</td>
+        </tr>
+        <tr>
+            <td>Anti-CCP (anticorpi anti-peptid ciclic citrulinat)</td>
+            <td class="normal">&lt; 20 U/mL</td>
+            <td class="moderate">20 - 60 U/mL</td>
+            <td class="high">&gt; 60 U/mL</td>
+        </tr>
+        <tr>
+            <td>Complement seric (C3)</td>
+            <td class="normal">90 - 180 mg/dL</td>
+            <td class="moderate">60 - 89 mg/dL</td>
+            <td class="high">&lt; 60 mg/dL</td>
+        </tr>
+        <tr>
+            <td>Complement seric (C4)</td>
+            <td class="normal">10 - 40 mg/dL</td>
+            <td class="moderate">5 - 9 mg/dL</td>
+            <td class="high">&lt; 5 mg/dL</td>
+        </tr>
+        <!-- Imunoglobuline -->
+        <tr>
+            <td>IgA</td>
+            <td class="normal">70 - 400 mg/dL</td>
+            <td class="moderate">50 - 69 mg/dL</td>
+            <td class="high">&lt; 50 mg/dL sau &gt; 400 mg/dL</td>
+        </tr>
+        <tr>
+            <td>IgG</td>
+            <td class="normal">700 - 1600 mg/dL</td>
+            <td class="moderate">500 - 699 mg/dL</td>
+            <td class="high">&lt; 500 mg/dL sau &gt; 1600 mg/dL</td>
+        </tr>
+        <tr>
+            <td>IgM</td>
+            <td class="normal">40 - 230 mg/dL</td>
+            <td class="moderate">30 - 39 mg/dL</td>
+            <td class="high">&lt; 30 mg/dL sau &gt; 230 mg/dL</td>
+        </tr>
+        <!-- Teste pentru anticorpi specifici -->
+        <tr>
+            <td>Anticorpi pentru hepatite virale (HBsAg, Anti-HCV)</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Suspiciune (titru scăzut)</td>
+            <td class="high">Pozitiv</td>
+        </tr>
+        <tr>
+            <td>Anticorpi pentru HIV</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Suspiciune</td>
+            <td class="high">Pozitiv</td>
+        </tr>
+        <tr>
+            <td>Anticorpi pentru sifilis (VDRL, TPHA)</td>
+            <td class="normal">Negativ</td>
+            <td class="moderate">Suspiciune</td>
+            <td class="high">Pozitiv</td>
+        </tr>
+    </tbody>
+</table>
+<h3> Coagulare (Hemostază)</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Timp de protrombină (PT/INR)</td>
+            <td class="normal">INR: 0.8 - 1.2</td>
+            <td class="moderate">1.3 - 2.0</td>
+            <td class="high">&gt; 2.0</td>
+        </tr>
+        <tr>
+            <td>Timp parțial de tromboplastină activat (APTT)</td>
+            <td class="normal">25 - 35 secunde</td>
+            <td class="moderate">36 - 45 secunde</td>
+            <td class="high">&gt; 45 secunde</td>
+        </tr>
+        <tr>
+            <td>Fibrinogen</td>
+            <td class="normal">200 - 400 mg/dL</td>
+            <td class="moderate">401 - 600 mg/dL</td>
+            <td class="high">&gt; 600 mg/dL</td>
+        </tr>
+        <tr>
+            <td>D-dimeri</td>
+            <td class="normal">&lt; 0.5 µg/mL</td>
+            <td class="moderate">0.5 - 1.0 µg/mL</td>
+            <td class="high">&gt; 1.0 µg/mL</td>
+        </tr>
+        <tr>
+            <td>Timp de sângerare</td>
+            <td class="normal">2 - 7 minute</td>
+            <td class="moderate">8 - 10 minute</td>
+            <td class="high">&gt; 10 minute</td>
+        </tr>
+        <tr>
+            <td>Timp de coagulare</td>
+            <td class="normal">5 - 10 minute</td>
+            <td class="moderate">11 - 15 minute</td>
+            <td class="high">&gt; 15 minute</td>
+        </tr>
+        <tr>
+            <td>Antitrombina III</td>
+            <td class="normal">80 - 120%</td>
+            <td class="moderate">70 - 79%</td>
+            <td class="high">&lt; 70% sau &gt; 120%</td>
+        </tr>
+        <tr>
+            <td>Proteina C</td>
+            <td class="normal">70 - 140%</td>
+            <td class="moderate">50 - 69%</td>
+            <td class="high">&lt; 50%</td>
+        </tr>
+        <tr>
+            <td>Proteina S</td>
+            <td class="normal">60 - 130%</td>
+            <td class="moderate">40 - 59%</td>
+            <td class="high">&lt; 40%</td>
+        </tr>
+    </tbody>
+</table>
+<h3> Markeri Tumorali</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Analiză</th>
+            <th> Normal</th>
+            <th> Moderat</th>
+            <th>Risc </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>PSA (antigen specific prostatic)</td>
+            <td class="normal">&lt; 4 ng/mL</td>
+            <td class="moderate">4 - 10 ng/mL</td>
+            <td class="high">&gt; 10 ng/mL</td>
+        </tr>
+        <tr>
+            <td>AFP (alfa-fetoproteină)</td>
+            <td class="normal">&lt; 10 ng/mL</td>
+            <td class="moderate">10 - 100 ng/mL</td>
+            <td class="high">&gt; 100 ng/mL</td>
+        </tr>
+        <tr>
+            <td>CA-125 (cancer ovarian)</td>
+            <td class="normal">&lt; 35 U/mL</td>
+            <td class="moderate">35 - 65 U/mL</td>
+            <td class="high">&gt; 65 U/mL</td>
+        </tr>
+        <tr>
+            <td>CA 19-9 (cancer pancreatic)</td>
+            <td class="normal">&lt; 37 U/mL</td>
+            <td class="moderate">37 - 100 U/mL</td>
+            <td class="high">&gt; 100 U/mL</td>
+        </tr>
+        <tr>
+            <td>CA 15-3 (cancer mamar)</td>
+            <td class="normal">&lt; 30 U/mL</td>
+            <td class="moderate">30 - 50 U/mL</td>
+            <td class="high">&gt; 50 U/mL</td>
+        </tr>
+        <tr>
+            <td>CEA (antigen carcinoembrionar)</td>
+            <td class="normal">&lt; 5 ng/mL</td>
+            <td class="moderate">5 - 10 ng/mL</td>
+            <td class="high">&gt; 10 ng/mL</td>
+        </tr>
+        <tr>
+            <td>Beta-HCG (gonadotropină corionică umană)</td>
+            <td class="normal">&lt; 5 mIU/mL</td>
+            <td class="moderate">5 - 10 mIU/mL</td>
+            <td class="high">&gt; 10 mIU/mL</td>
+        </tr>
+    </tbody>
+</table>
+<h3>eGFR (Estimarea Rata de Filtrare Glomerulară)</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Interval eGFR</th>
+            <th>Interpretare</th>
+            <th>Etapa Bolii Renale</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&gt; 90 mL/min/1.73m²</td>
+            <td class="normal">Normal sau funcție renală crescută</td>
+            <td>Etapa 1</td>
+        </tr>
+        <tr>
+            <td>60 - 89 mL/min/1.73m²</td>
+            <td class="moderate">Ușoară scădere a funcției renale</td>
+            <td>Etapa 2</td>
+        </tr>
+        <tr>
+            <td>30 - 59 mL/min/1.73m²</td>
+            <td class="moderate">Scădere moderată a funcției renale</td>
+            <td>Etapa 3</td>
+        </tr>
+        <tr>
+            <td>15 - 29 mL/min/1.73m²</td>
+            <td class="high">Scădere severă a funcției renale</td>
+            <td>Etapa 4</td>
+        </tr>
+        <tr>
+            <td>&lt; 15 mL/min/1.73m²</td>
+            <td class="high">Insuficiență renală</td>
+            <td>Etapa 5</td>
+        </tr>
+    </tbody>
+</table>
+
+    </div>
+</body>
+</html>

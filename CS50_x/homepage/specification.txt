@@ -1,0 +1,24 @@
+HTML Tags:
+- <header>: Used for the header of the page.
+- <footer>: Used for the footer of the page.
+- <nav>: Used for the navigation menu.
+- <ul>: Used for an unordered list in the navigation.
+- <li>: Used for items in the navigation list.
+- <a>: Used for navigation links.
+- <div>: Used as a container.
+- <h1>: Main heading.
+- <p>: Paragraphs on the page.
+- <form>: Used on the contact page for a simple form.
+
+CSS Properties:
+- font-family: Set a consistent font for the page.
+- background-color: Applied to the header and footer.
+- color: Applied to various elements for text color.
+- padding: Used for spacing around elements.
+- font-size: Used to adjust text size in the footer.
+
+JavaScript:
+Used to display a welcome alert when the page loads.
+
+Bootstrap:
+Used Bootstrap navbar and jumbotron components to style the layout of the page.
